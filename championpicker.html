@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Champion picker — icons & stats</title>
+  <style>
+    :root{--bg:#0f1720;--card:#0b1220;--accent:#4f46e5;--muted:#98a2b3;--glass: rgba(255,255,255,0.04)}
+    html,body{height:100%;margin:0;font-family:Inter,Segoe UI,system-ui,Arial;background:linear-gradient(180deg,#071025 0%, #0f1720 100%);color:#e6eef6}
+    header{display:flex;align-items:center;gap:16px;padding:18px 28px;border-bottom:1px solid rgba(255,255,255,0.03)}
+    header h1{font-size:18px;margin:0}
+    .container{max-width:1180px;margin:18px auto;padding:0 18px}
+    .controls{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+    .search{flex:1;display:flex;align-items:center;background:var(--glass);padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03)}
+    .search input{flex:1;background:transparent;border:0;color:inherit;font-size:14px;outline:none}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:10px}
+    .champ{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));border-radius:8px;padding:8px;display:flex;flex-direction:column;align-items:center;cursor:pointer;transition:transform .12s,box-shadow .12s;border:1px solid rgba(255,255,255,0.02)}
+    .champ:hover{transform:translateY(-6px);box-shadow:0 6px 18px rgba(0,0,0,0.6)}
+    .champ img{width:64px;height:64px;object-fit:contain;border-radius:6px;background:linear-gradient(180deg,#0b1117,#081018)}
+    .champ label{font-size:11px;color:var(--muted);margin-top:6px;text-align:center}
+
+    /* details panel */
+    /* center details window and make it more readable */
+    /* overlay sits beneath the modal and dims the page */
+    #overlay{position:fixed;inset:0;background:rgba(0,0,0,0.65);backdrop-filter:blur(2px);opacity:0;pointer-events:none;transition:opacity .18s ease;z-index:50}
+    #overlay.open{opacity:1;pointer-events:auto}
+
+    .details{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%) scale(.98);width:min(760px,92%);max-height:80vh;background:linear-gradient(180deg, rgba(12,18,24,0.94), rgba(6,10,14,0.95));backdrop-filter:blur(6px);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.06);box-shadow:0 12px 40px rgba(3,8,15,0.8);overflow:auto;z-index:60;opacity:0;transition:opacity .18s ease, transform .18s cubic-bezier(.2,.9,.2,1)}
+    .details.open{opacity:1;transform:translate(-50%,-50%) scale(1)}
+    .details .title{display:flex;align-items:center;gap:12px}
+    .details img{width:64px;height:64px;border-radius:8px}
+    .meta{font-size:13px;color:var(--muted);margin-top:6px}
+    .statlist{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px}
+    .stat{background:rgba(255,255,255,0.02);padding:8px;border-radius:6px;font-size:13px;border:1px solid rgba(255,255,255,0.02)}
+
+    footer{margin-top:22px;color:var(--muted);font-size:13px}
+
+    @media (max-width:880px){ .details{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:calc(100% - 36px);max-height:84vh;margin-top:0} }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="ikons/Aatrox.png" alt="logo" width="36" height="36" style="border-radius:8px;filter:drop-shadow(0 3px 6px rgba(0,0,0,0.6))"> 
+    <h1>Champion picker — click an icon to view stats</h1>
+  </header>
+
+  <div class="container">
+    <div class="controls">
+      <div class="search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="opacity:.8;margin-right:8px"><path d="M21 21l-4.35-4.35" stroke="#cbd5e1" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <input id="filter" placeholder="Search by champion name or role (e.g. 'Ahri', 'Marksman')" />
+        <button id="reset">Reset</button>
+      </div>
+      <div style="color:var(--muted);font-size:13px">Champions: <span id="count">-</span></div>
+    </div>
+
+    <div id="grid" class="grid" aria-live="polite"></div>
+
+    <!-- modal overlay (dims the background) -->
+    <div id="overlay" hidden></div>
+
+    <div id="details" class="details" hidden role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="title">
+        <img id="details-img" src="" alt=""/>
+        <div>
+          <div id="details-name" style="font-weight:700;font-size:16px">Name</div>
+          <div id="details-title" style="font-size:13px;color:var(--muted)">Title</div>
+          <div id="details-tags" style="font-size:12px;color:var(--muted);margin-top:6px"></div>
+        </div>
+      </div>
+
+      <div class="meta" id="details-blurb"></div>
+
+      <div class="statlist" id="statlist"></div>
+
+      <div style="display:flex;gap:8px;margin-top:12px;align-items:center">
+        <a id="open-img" class="open-link" style="font-size:13px;color:var(--accent);text-decoration:none" target="_blank">Open image</a>
+        <span style="color:var(--muted);font-size:13px"> • </span>
+        <button id="close-details" style="background:transparent;border:0;color:var(--muted);cursor:pointer">Close</button>
+      </div>
+    </div>
+
+    <footer>Files are loaded from <code>championstats.json</code> and images in <code>ikons/</code>. Click any icon to view the champion's stats.</footer>
+  </div>
+
+  <script>
+    // Fetch JSON data and build grid
+    const grid = document.getElementById('grid')
+    const countEl = document.getElementById('count')
+    const filterEl = document.getElementById('filter')
+    const resetBtn = document.getElementById('reset')
+    const details = document.getElementById('details')
+    const detailsImg = document.getElementById('details-img')
+    const detailsName = document.getElementById('details-name')
+    const detailsTitle = document.getElementById('details-title')
+    const detailsTags = document.getElementById('details-tags')
+    const detailsBlurb = document.getElementById('details-blurb')
+    const statlist = document.getElementById('statlist')
+    const openImg = document.getElementById('open-img')
+    const closeBtn = document.getElementById('close-details')
+
+    let championData = null
+    let championList = []
+
+    function makeCard(name, imgSrc) {
+      const el = document.createElement('div')
+      el.className = 'champ'
+      el.tabIndex = 0
+      el.innerHTML = `<img src="${imgSrc}" loading="lazy" alt="${name}"/><label>${name}</label>`
+      el.addEventListener('click', () => showDetails(name))
+      el.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' ') showDetails(name) })
+      return el
+    }
+
+    function showDetails(key) {
+      const champ = championData.data[key]
+      if(!champ) return
+      detailsImg.src = `ikons/${key}.png`
+      detailsName.textContent = champ.name + ' (' + champ.id + ')'
+      detailsTitle.textContent = champ.title
+      detailsTags.textContent = champ.tags.join(' • ')
+      detailsBlurb.textContent = champ.blurb
+
+      // fill statlist
+      statlist.innerHTML = ''
+      const info = champ.info || {}
+      const stats = champ.stats || {}
+      const numeric = Object.assign({}, info, {
+          attack: info.attack, defense: info.defense, magic: info.magic, difficulty: info.difficulty
+      })
+      // show core info
+      for (const k of ['attack','defense','magic','difficulty']){
+        const el = document.createElement('div'); el.className='stat'; el.innerHTML = `<div style="font-weight:700">${k}</div><div style="color:var(--muted)">${numeric[k] ?? '—'}</div>`; statlist.appendChild(el)
+      }
+
+      // show a few important stats
+      const important = ['hp','hpperlevel','mp','mpperlevel','movespeed','armor','attackrange','attackdamage']
+      for (const s of important){
+        const el = document.createElement('div'); el.className='stat'; el.innerHTML = `<div style='font-weight:700'>${s}</div><div style='color:var(--muted)'>${stats[s] ?? '—'}</div>`; statlist.appendChild(el)
+      }
+
+      openImg.href = `ikons/${key}.png`
+      // un-hide and animate overlay + modal
+      overlay.hidden = false
+      details.hidden = false
+      // force a frame before adding .open so transitions animate
+      requestAnimationFrame(()=>{
+        overlay.classList.add('open')
+        details.classList.add('open')
+        details.setAttribute('aria-hidden', 'false')
+      })
+      details.scrollTop = 0
+    }
+
+    function closeDetails() {
+      // animate out
+      overlay.classList.remove('open')
+      details.classList.remove('open')
+      details.setAttribute('aria-hidden', 'true')
+      // wait for transition to finish then hide
+      setTimeout(()=>{
+        overlay.hidden = true
+        details.hidden = true
+      }, 200)
+    }
+
+    function render(list) {
+      grid.innerHTML = ''
+      for (const key of list) {
+        const img = `ikons/${key}.png`
+        grid.appendChild(makeCard(key, img))
+      }
+      countEl.textContent = list.length
+    }
+
+    function filterList(q) {
+      if (!q) return championList
+      q = q.toLowerCase().trim()
+      return championList.filter(k => {
+        const c = championData.data[k]
+        if (!c) return false
+        return c.name.toLowerCase().includes(q) || c.title.toLowerCase().includes(q) || (c.tags && c.tags.join(' ').toLowerCase().includes(q))
+      })
+    }
+
+    filterEl.addEventListener('input', () => {
+      const list = filterList(filterEl.value)
+      render(list)
+    })
+    resetBtn.addEventListener('click', ()=>{ filterEl.value=''; render(championList) })
+    closeBtn.addEventListener('click', ()=> closeDetails())
+    // clicking overlay closes modal
+    const overlay = document.getElementById('overlay')
+    overlay.addEventListener('click', ()=> closeDetails())
+
+    // close with ESC key
+    window.addEventListener('keydown', (e)=>{
+      if (e.key === 'Escape' && !details.hidden) {
+        closeDetails()
+      }
+    })
+
+    // load JSON and build grid
+    fetch('championstats.json').then(r=>r.json()).then(j=>{
+      championData = j
+      championList = Object.keys(j.data).sort((a,b)=>a.localeCompare(b))
+      render(championList)
+    }).catch(err=>{
+      grid.innerHTML = '<div style="color:#f4cccc">Failed to load championstats.json — open this file from the repo root in a browser. Check console for details.</div>'
+      console.error(err)
+    })
+  </script>
+</body>
+</html>
