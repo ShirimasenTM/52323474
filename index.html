@@ -44,6 +44,29 @@
             padding: 2px 5px;
             border-radius: 4px;
         }
+        /* Items grid + card styles */
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            margin-top: 12px;
+        }
+        .item-card {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            padding: 12px;
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 8px;
+            background: linear-gradient(180deg, #fff, #fbfbfd);
+        }
+        .item-media { flex: 0 0 84px; display:flex; align-items:center; justify-content:center }
+        .item-img { width:72px; height:72px; object-fit:cover; border-radius:6px; display:block; }
+        .item-body { flex: 1; }
+        .item-title { margin:0 0 6px 0; font-size:1.08rem; }
+        .item-stats ul { margin:6px 0 8px 18px; }
+        .item-desc p { margin:6px 0; }
+        label { display:block; margin-top:8px; font-size:0.9rem; }
     </style>
 <body>
 
@@ -54,29 +77,32 @@
 </div>
 
 <section>
-    <h2>Map-Changes</h2>
+    <h2>Map-Changes and objective changes</h2>
 
     <article>
-        <h3>Faelights</h3>
+        <h2>Faelights</h2>
         <p>Faelights are a new map area with special vision and timing mechanics:</p>
         <ul>
             <li>Dedicated warding spots.</li>
             <li>Wards placed in Faelights reveal significantly more of the map than standard wards.</li>
             <li>First Faelights activation is expected around <strong>3:00</strong>,and after the first elemental map transformation.</li>
         </ul>
-    </article>
-</section>
-
-<section>
-    <h2>🌋 Objectives</h2>
-    <h3>Baron</h3>
+    <h2>Baron</h2>
     <ul>
         <li>Spawn time: <strong>20:00</strong></li>
     </ul>
-    <h3>Dragons</h3>
+    <h2>Dragons</h2>
     <ul>
         <li>Dragons scale → tankier one after another</li>
     </ul>
+
+    <h2>Minions</h2>
+        <ul>
+            <li>First wave spawns at <strong>0:30</strong></li>
+            <li>After 14 minutes: wave spawn every 25 seconds and have 1 less Melee minion</li>
+            <li>After 30 minutes: wave spawn every 20 seconds and have 1 less Caster minion</li>
+        </ul>
+    </article>
 </section>
 
 <section>
@@ -84,6 +110,11 @@
     <ul>
         <li>Atahkahn (Blood Rose / Petals) → bye bye</li>
         <li>Feats of Strength</li>
+    </ul>
+    <h2>✔️ Added</h2>
+    <ul>
+        <li>First Turret 300G</li>
+        <li>First Kill 100G</li>
     </ul>
 </section>
 
@@ -109,15 +140,16 @@
     <h2>Role-Specific Buffs</h2>
     <h3>🗻 TOP</h3>
     <ul>
-        <li>Free Teleport summoner</li>
-        <li>Level cap possibly increased (18+)</li>
+        <li>Without picking teleport in champ select, gain a longer DC teleport</li>
+        <li>With picking teleport in champ select, get MAX HP SHIELD on use</li>
+        <li>Level cap possibly increased to 20</li>
         <li>More gold & XP from everything</li>
     </ul>
 
     <h3>🔥 MID</h3>
     <ul>
-        <li>Free Tier 3 Boots upgrade</li>
-        <li>Faster recall</li>
+        <li>Free Tier 3 Boots</li>
+        <li>Empowered 4 second recall ( probably with CD )</li>
     </ul>
 
     <h3>🏹 ADC</h3>
@@ -139,7 +171,8 @@
     <h3>🛡 Support</h3>
     <ul>
         <li>New slot for control wards</li>
-        <li>More gold over time</li>
+        <li>Discount on control wards</li>
+        <li>More passive gold over time</li>
     </ul>
 </section>
 
@@ -168,19 +201,277 @@
     </ul>
 </section>
 
-<section>
+<section id="items-section">
     <h2>🧰 Items</h2>
-    <ul>
-        <li>Scepter of Bonking → Spellblade effect</li>
-        <li>Gunblade</li>
-        <li>Blood Sphere → Omnivamp, ability haste scaling from AD?</li>
-        <li>Snowbow → Extra range on takedown, more damage the farther the target</li>
-    </ul>
+
+    <!-- Nicely formatted item cards -->
+    <div class="items-grid">
+        <article class="item-card" data-item-id="scepter">
+            <div class="item-media">
+                <img class="item-img" src="ikons/Item_APFighterSheen.jpg" alt="Scepter of Bonking">
+            </div>
+            <div class="item-body">
+                <h3 class="item-title">Scepter of Bonking</h3>
+                <div class="item-stats">
+                    <strong>Stats</strong>
+                    <ul>
+                        <li>250 Health</li>
+                        <li>60 Ability Power</li>
+                        <li>20 Ability Haste</li>
+                        <li>25% Attack Speed</li>
+                    </ul>
+                </div>
+                <div class="item-desc">
+                    <strong>Description</strong>
+                    <p>Spellblade (1.5 seconds): After using an ability, your next attack deals bonus magic damage (AP/AD scaling). Applies On-Hit effects an additional time.</p>
+                </div>
+
+            </div>
+        </article>
+
+        <article class="item-card" data-item-id="bloodsphere">
+            <div class="item-media">
+                <img class="item-img" src="ikons/Item_BloodlettersCurse.jpg" alt="Blood Sphere">
+            </div>
+            <div class="item-body">
+                <h3 class="item-title">Blood Sphere</h3>
+                <div class="item-stats">
+                    <strong>Stats</strong>
+                    <ul>
+                        <li>60 Attack Damage</li>
+                        <li>5% Omnivamp</li>
+                        <li>20% Tenacity</li>
+                    </ul>
+                </div>
+                <div class="item-desc">
+                    <strong>Traits</strong>
+                    <ul>
+                        <li>Hasty — Gain 5 Haste.</li>
+                        <li>Goredrinking — When an enemy champion dies within 3s of you damaging them, gain 10% Omnivamp for 8s.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="item-card" data-item-id="snowbow">
+            <div class="item-media">
+                <img class="item-img" src="ikons/Item_ADCLongRange.jpg" alt="Snowbow">
+            </div>
+            <div class="item-body">
+                <h3 class="item-title">Snowbow</h3>
+                <div class="item-stats">
+                    <strong>Stats</strong>
+                    <ul>
+                        <li>50 Attack Damage</li>
+                        <li>25% Critical Strike Chance</li>
+                    </ul>
+                </div>
+                <div class="item-desc">
+                    <strong>Traits</strong>
+                    <ul>
+                        <li>Sniping — Attacks deal up to 10% increased damage based on distance (max at 700 range).</li>
+                        <li>Blasting — If a champion you damaged dies within 3s, gain +100 attack range for 6s.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+        <!-- Hextech Gunblade (new) -->
+        <article class="item-card" data-item-id="hextech-gunblade">
+            <div class="item-media">
+                <img class="item-img" src="ikons/Hextech_Gunblade_item.png" alt="Hextech Gunblade">
+            </div>
+            <div class="item-body">
+                <h3 class="item-title">Hextech Gunblade</h3>
+                <div class="item-stats">
+                    <strong>Stats</strong>
+                    <ul>
+                        <li>+45 Attack Damage</li>
+                        <li>+90 Ability Power</li>
+                        <li>+15% Omnivamp</li>
+                    </ul>
+                </div>
+                <div class="item-desc">
+                    <strong>Lightning Bolt</strong>
+                    <p>Shocks the target enemy champion with a bolt that deals <strong>175–253</strong> magic damage (scales by level) + <strong>30% bonus AD</strong> + <strong>30% AP</strong>, and slows the target by <strong>40% for 2s</strong>. (20s cooldown, centered range 700.)</p>
+                </div>
+            </div>
+        </article>
+
+        <!-- Stormrazor (new) -->
+        <article class="item-card" data-item-id="stormrazor">
+            <div class="item-media">
+                <img class="item-img" src="ikons/Stormrazor_item.png" alt="Stormrazor">
+            </div>
+            <div class="item-body">
+                <h3 class="item-title">Stormrazor</h3>
+                <div class="item-stats">
+                    <strong>Stats</strong>
+                    <ul>
+                        <li>+45 Attack Damage</li>
+                        <li>+25% Attack Speed</li>
+                        <li>+25% Critical Strike Chance</li>
+                    </ul>
+                </div>
+                <div class="item-desc">
+                    <strong>Unique — Energized</strong>
+                    <p>Moving and basic attacking generates Energize stacks, up to 100.</p>
+                    <strong>Unique — Bolt</strong>
+                    <p>When fully Energized, your next basic attack deals <strong>100 bonus magic damage on-hit</strong> and grants <strong>+45% movement speed for 1.5s</strong>.</p>
+                </div>
+            </div>
+        </article>
+        <!-- New items from Items.txt (added) -->
+        <article class="item-card" data-item-id="manabells">
+            <div class="item-media">
+                <img class="item-img" src="ikons/Item_ManaStacking_Active.jpg" alt="Savior's Manabell / Superbell">
+            </div>
+            <div class="item-body">
+                <h3 class="item-title">Savior's Manabell / Superbell</h3>
+                <div class="item-stats">
+                    <strong>Stats</strong>
+                    <ul>
+                        <li>250 Health</li>
+                        <li>-8% Heal & Shield Power</li>
+                        <li>-1,000 Mana</li>
+                        <li>-100% Base Mana Regen</li>
+                    </ul>
+                </div>
+                <div class="item-desc">
+                    <strong>Holy</strong>
+                    <p>Gain 0 (Mana) Heal and Shield Power.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="item-card" data-item-id="moonstone">
+            <div class="item-media">
+                <img class="item-img" src="ikons/Item_TearforEnchantersUPGRADED.jpg" alt="Ye Old Moonstone">
+            </div>
+            <div class="item-body">
+                <h3 class="item-title">Ye Old Moonstone</h3>
+                <div class="item-desc">
+                    <p>While in combat with champions, each second heal the lowest nearby ally for 1% of your maximum Mana.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="item-card" data-item-id="emblem-allin">
+            <div class="item-media">
+                <img class="item-img" src="ikons/Item_ADAssassinGemEnder.jpg" alt="Emblem of All-Inning">
+            </div>
+            <div class="item-body">
+                <h3 class="item-title">Emblem of All-Inning</h3>
+                <div class="item-stats">
+                    <ul>
+                        <li>-40% Attack Speed</li>
+                        <li>-25% Critical Strike Chance</li>
+                        <li>-4% Move Speed</li>
+                    </ul>
+                </div>
+                <div class="item-desc">
+                    <strong>Functionality</strong>
+                    <p>Gain 15 Ultimate Ability Haste.</p>
+                    <strong>Divine All-In (60s)</strong>
+                    <p>After casting your Ultimate, your next 3 basic attacks gain 50% Attack Speed and critically strike for 75% of normal crit damage for 8s. If an attack would already crit, instead it deals +10% bonus true damage.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="item-card" data-item-id="mantle">
+            <div class="item-media">
+                <img class="item-img" src="ikons/Items_TankLifeline.jpg" alt="Mantle of the Twelfth Hour">
+            </div>
+            <div class="item-body">
+                <h3 class="item-title">Mantle of the Twelfth Hour</h3>
+                <div class="item-stats">
+                    <ul>
+                        <li>600 Health</li>
+                        <li>15 Ability Haste</li>
+                    </ul>
+                </div>
+                <div class="item-desc">
+                    <strong>Lifeline (90s)</strong>
+                    <p>When damage would reduce you below 30% HP, regenerate 480 Health over 5 seconds. While regenerating, gain +15% Size, +10% Move Speed and +25% Tenacity.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="item-card" data-item-id="buff-engine">
+            <div class="item-media">
+                <img class="item-img" src="ikons/Item_Tank_ASAura.jpg" alt="Buff Engine">
+            </div>
+            <div class="item-body">
+                <h3 class="item-title">Buff Engine</h3>
+                <div class="item-stats">
+                    <ul>
+                        <li>200 Health</li>
+                        <li>10 Ability Haste</li>
+                        <li>25 Armor</li>
+                        <li>25 Magic Resist</li>
+                    </ul>
+                </div>
+                <div class="item-desc">
+                    <strong>Buff Time</strong>
+                    <p>Slowing or immobilizing an enemy grants a Buff Aura for 8s. While you have the aura you gain +20 Move Speed; nearby allies gain +30% Attack Speed.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="item-card" data-item-id="mananomicon">
+            <div class="item-media">
+                <img class="item-img" src="ikons/Item_TearforEnchantersUPGRADED.jpg" alt="Mananomicon">
+            </div>
+            <div class="item-body">
+                <h3 class="item-title">Mananomicon</h3>
+                <div class="item-stats">
+                    <ul>
+                        <li>90 Ability Power</li>
+                        <li>300 Mana</li>
+                        <li>10 Ability Haste</li>
+                    </ul>
+                </div>
+                <div class="item-desc">
+                    <strong>Mana Ascension (60s)</strong>
+                    <p>For 8s your Mana Ascends — spells cost 100% more Mana, you gain +10% Ability damage/Shielding/Healing and cooldown progress is 25% faster.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="item-card" data-item-id="assassin-unnamed">
+            <div class="item-media">
+                <img class="item-img" src="ikons/Item_ADAssassinGemEnder.jpg" alt="Assassin Item (unnamed)">
+            </div>
+            <div class="item-body">
+                <h3 class="item-title">Assassin Item (unnamed)</h3>
+                <div class="item-stats">
+                    <ul>
+                        <li>55 Attack Damage</li>
+                        <li>22 Lethality</li>
+                        <li>15 Ability Haste</li>
+                    </ul>
+                </div>
+                <div class="item-desc">
+                    <strong>Deal Damage (20s)</strong>
+                    <p>Dealing Ability damage to a Champion or Epic Monster deals an additional 15 true damage.</p>
+                    <strong>Please End the Game</strong>
+                    <p>Taking down a champion within 3s of damaging them grants Game Health for 90s. While you have Game Health, your next attack against an Epic Monster or Turret deals an additional 240 true damage over 3s.</p>
+                </div>
+            </div>
+        </article>
+    </div>
 
     <h3>Item-Buffs</h3>
     <ul>
-        <li>Crit damage back to 200%</li>
+        <li>Crit damage 175% → 200%</li>
     </ul>
+
+    <!-- Image loading helpers (per-card file attached is available below) -->
+    <script>
+        (function(){
+            // All in-page image-selection and attach/persistence features were removed per request.
+            // Item images remain static and are loaded from the `ikons/` paths written in the HTML.
+        })();
+    </script>
 </section>
 
 </body>

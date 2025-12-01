@@ -1,0 +1,121 @@
+Savior's Manabell and Superbell
+
+Stats
+-250 Health
+-8% Heal and Shield Power
+-1,000 Mana
+-100% Base Mana Regen
+
+Holy
+-Gain 0 (Mana) Heal and Shield Power.
+
+Ye Old Moonstone
+-While in combat with champions, each second, heal the lowest nearby ally for 1% of your maximum Mana.
+
+---
+
+Emblem of All-Inning
+
+Stats
+-40% Attack Speed
+-25% Critical Strike Chance
+-4% Move Speed
+
+Functionality
+-Gain 15 Ultimate Ability Haste.
+
+Divine All-In (60s)
+-After casting your Ultimate, your next 3 basic attacks gain 50% Attack Speed and Critically Strike for 75% of your normal Critical Strike damage for 8 seconds. If an attack would already Critically Strike, instead it deals 10% bonus true damage.
+
+---
+
+Mantle of the Twelfth Hour
+
+Stats
+-600 Health
+-15 Ability Haste
+
+Lifeline (90 seconds)
+-Taking damage that would reduce your Health below 30% causes you to regenerate 480 Health over 5 seconds. While regenerating Health, you gain 15% increased Size, 10% Move Speed, and 25% Tenacity
+
+---
+
+Buff Engine
+
+Stats
+-200 Health
+-10 Ability Haste
+-25 Armor
+-25 Magic Resist
+
+Buff Time
+-Slowing or immobilizing an enemy champion grants the Buff Aura for 8 seconds. The Buff Aura grants you 20 Move Speed. While you have the Buff Aura, nearby allies, including yourself, gain 30% Attack Speed.
+
+---
+
+Mananomicon
+
+Stats
+-90 Ability Power
+-300 Mana
+-10 Ability Haste
+
+Mana Ascension (60 seconds)
+-For 8 seconds, your Mana Ascends. While Ascended, your spells cost 100% more Mana and you gain 10.0% increased Ability damage, Shielding, Healing, and your cooldowns progress 25% faster.
+
+---
+
+Blood Sphere
+
+Stats
+-60 Attack Damage
+-5% Omnivamp
+-20% Tenacity
+
+Hasty
+-Gain 5 Haste.
+
+Goredrinking
+-Whenever an enemy champion dies within 3 seconds of you damaging them, gain 10% Omnivamp for 8 seconds.
+
+---
+
+Scepter of Bonking
+
+Stats
+-250 Health
+-60 Ability Power
+-20 Ability Haste
+-25% Attack Speed
+
+Spellblade (1.5 seconds)
+-After using an Ability, your next attack deals 114 (AP/AD) bonus magic damage. On-Hit and applies On-Hit effects an additional time.
+
+---
+
+Snowbow
+
+Stats
+-50 Attack Damage
+-25% Critical Strike Chance
+
+Sniping
+-Deal up to 10% increased damage with Attacks, based on how far away the enemy is (max damage at 700 range).
+
+Blasting
+-Whenever a champion you dealt damage to within 3 seconds dies, gain 100 additional attack range for 6 seconds.
+
+---
+
+Assassin item [No name]
+
+Stats
+-55 Attack Damage
+-22 Lethality
+-15 Ability Haste
+
+Deal Damage (20 seconds)
+-Dealing Ability damage to a Champion or Epic Monster deals an additional 15 true damage.
+
+Please End the Game
+-Taking down a champion within 3 seconds of damaging them grants Game Health for 90 seconds. While you have Game Health, your next Attack against an Epic Monster or Turret deals an additional 240 true damage over 3 seconds.
