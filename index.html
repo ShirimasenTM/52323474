@@ -12,6 +12,18 @@
             background-color: #f9f9f9;
             color: #222;
         }
+       .lang-btn {
+           display: inline-block;
+           margin: 10px auto 0;
+           padding: 8px 12px;
+           background: #2c3e50;
+           color: #fff;
+           border: none;
+           border-radius: 6px;
+           cursor: pointer;
+           font-size: 0.95rem;
+       }
+       .lang-btn:hover { opacity: 0.9; }
         h1, h2, h3 {
             color: #2c3e50;
         }
@@ -33,10 +45,13 @@
             border-radius: 4px;
         }
     </style>
-</head>
 <body>
 
 <h1>League of Legends – Next Season Notes</h1>
+<!-- language / translation button -->
+<div style="text-align:center;">
+    <button class="lang-btn" aria-label="Open Hungarian translation" onclick="window.location.href='hu.html'">Magyar</button>
+</div>
 
 <section>
     <h2>Map-Changes</h2>
