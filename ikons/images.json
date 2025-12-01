@@ -1,13 +1,13 @@
 {
-  "images": [
-    "ikons/Items_TankLifeline.jpg",
-    "ikons/Item_ADAssassinGemEnder.jpg",
-    "ikons/Item_ADCLongRange.jpg",
-    "ikons/Item_APFighterSheen.jpg",
-    "ikons/Item_BloodlettersCurse.jpg",
-    "ikons/Item_ManaStacking_Active.jpg",
-    "ikons/Item_Tank_ASAura.jpg",
-    "ikons/Item_TearforEnchantersUPGRADED.jpg",
-    "ikons/Item_UltAllin.jpg"
-  ]
+    "images":  [
+                   "ikons/NEWitems/Items_TankLifeline.jpg",
+                   "ikons/NEWWitems/Item_ADAssassinGemEnder.jpg",
+                   "ikons/NEWWitems/Item_ADCLongRange.jpg",
+                   "ikons/NEWWitems/Item_APFighterSheen.jpg",
+                   "ikons/NEWWitems/Item_BloodlettersCurse.jpg",
+                   "ikons/NEWWitems/Item_ManaStacking_Active.jpg",
+                   "ikons/NEWWitems/Item_Tank_ASAura.jpg",
+                   "ikons/NEWWitems/Item_TearforEnchantersUPGRADED.jpg",
+                   "ikons/NEWWitems/Item_UltAllin.jpg"
+               ]
 }
