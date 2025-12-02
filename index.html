@@ -283,7 +283,7 @@
         <li>New "Aegis of Valor": if you autofill and have mastery > C, you won't lose LP on a loss or you'll earn double LP for a win.</li>
         <li>Removing the ability to ban a hovered ally champion.</li>
         <li>Dodging a lobby will no longer allow players to escape autofill.</li>
-        <li>Dodging as autofill will count as a full loss.</li>
+        <li>Dodging will count as a full loss.</li>
         <li>Speeding up champ select by cutting timers and animations (~30 seconds faster).</li>
         <li>Reintroducing Duo Queue for higher ranks including Grandmaster and Challenger.</li>
     </ol>
@@ -297,40 +297,51 @@
 </section>
 
 <section id="items-section">
-    <h2>🧰 Items</h2>
+    <h2>🧰 Items (new and changed)</h2>
 
     <!-- Nicely formatted item cards -->
     <div class="items-grid">
-        <article class="item-card" data-item-id="scepter">
+        <article class="item-card" data-item-id="dusk-and-dawn">
             <div class="item-media">
-                <img class="item-img" src="ikons/NEWitems/Item_APFighterSheen.jpg" alt="Scepter of Bonking">
+                <img class="item-img" src="ikons/NEWitems/Item_APFighterSheen.jpg" alt="Dusk & Dawn">
             </div>
             <div class="item-body">
-                <h3 class="item-title">Scepter of Bonking</h3>
+                <h3 class="item-title">Dusk & Dawn</h3>
                 <div class="item-stats">
+                    <strong>GOLD</strong>
+                    <ul>
+                        <li>3100</li>
+                    </ul>
                     <strong>Stats</strong>
                     <ul>
-                        <li>250 Health</li>
-                        <li>60 Ability Power</li>
+                        <li>300 Health</li>
+                        <li>70 Ability Power</li>
                         <li>20 Ability Haste</li>
                         <li>25% Attack Speed</li>
                     </ul>
                 </div>
+
                 <div class="item-desc">
-                    <strong>Description</strong>
-                    <p>Spellblade (1.5 seconds): After using an ability, your next attack deals bonus magic damage (AP/AD scaling). Applies On-Hit effects an additional time.</p>
+                    <strong>Spellblade (1.5 seconds)</strong>
+                    <ul>
+                        <li>After using an ability, your next attack deals (100 base AD + 10% AP) bonus magic damage . Applies On-Hit effects an additional time.</li>
+                    </ul>
                 </div>
 
             </div>
         </article>
 
-        <article class="item-card" data-item-id="bloodsphere">
+        <article class="item-card" data-item-id="eternal-hunger">
             <div class="item-media">
-                <img class="item-img" src="ikons/NEWitems/Item_BloodlettersCurse.jpg" alt="Blood Sphere">
+                <img class="item-img" src="ikons/NEWitems/Item_BloodlettersCurse.jpg" alt="Eternal Hunger">
             </div>
             <div class="item-body">
-                <h3 class="item-title">Blood Sphere</h3>
+                <h3 class="item-title">Eternal Hunger</h3>
                 <div class="item-stats">
+                    <strong>GOLD</strong>
+                    <ul>
+                        <li>3000</li>
+                    </ul>
                     <strong>Stats</strong>
                     <ul>
                         <li>60 Attack Damage</li>
@@ -339,22 +350,29 @@
                     </ul>
                 </div>
                 <div class="item-desc">
-                    <strong>Traits</strong>
+                    <strong>Famine</strong>
                     <ul>
-                        <li>Hasty — Gain 5 Haste.</li>
-                        <li>Goredrinking — When an enemy champion dies within 3s of you damaging them, gain 10% Omnivamp for 8s.</li>
+                        <li>Gain (5 + 10% Attack Damage) Ability Haste.</li>
+                    </ul>
+                    <strong>Goredrinking</strong>
+                    <ul>
+                        <li>When an enemy champion dies within 3s of you damaging them, gain 15% Omnivamp for 8s.</li>
                     </ul>
                 </div>
             </div>
         </article>
 
-        <article class="item-card" data-item-id="snowbow">
+        <article class="item-card" data-item-id="hexoptics-c44">
             <div class="item-media">
-                <img class="item-img" src="ikons/NEWitems/Item_ADCLongRange.jpg" alt="Snowbow">
+                <img class="item-img" src="ikons/NEWitems/Item_ADCLongRange.jpg" alt="Hexoptics C44">
             </div>
             <div class="item-body">
-                <h3 class="item-title">Snowbow</h3>
+                <h3 class="item-title">Hexoptics C44</h3>
                 <div class="item-stats">
+                    <strong>GOLD</strong>
+                    <ul>
+                        <li>2800</li>
+                    </ul>
                     <strong>Stats</strong>
                     <ul>
                         <li>50 Attack Damage</li>
@@ -362,10 +380,13 @@
                     </ul>
                 </div>
                 <div class="item-desc">
-                    <strong>Traits</strong>
+                    <strong>Magnification</strong>
                     <ul>
-                        <li>Sniping — Attacks deal up to 10% increased damage based on distance (max at 700 range).</li>
-                        <li>Blasting — If a champion you damaged dies within 3s, gain +100 attack range for 6s.</li>
+                        <li>Attacks deal up to 10% increased damage based on distance (max at 700 range).</li>
+                    </ul>
+                    <strong>Arcane Aim</strong>
+                    <ul>
+                        <li>If a champion you damaged dies within 3s, gain +100 attack range for 6s.</li>
                     </ul>
                 </div>
             </div>
@@ -378,16 +399,26 @@
             <div class="item-body">
                 <h3 class="item-title">Hextech Gunblade</h3>
                 <div class="item-stats">
+                    <strong>GOLD</strong>
+                    <ul>
+                        <li>3000</li>
+                    </ul>
                     <strong>Stats</strong>
                     <ul>
-                        <li>+45 Attack Damage</li>
-                        <li>+90 Ability Power</li>
-                        <li>+15% Omnivamp</li>
+                        <li>80 Ability Damage</li>
+                        <li>40 Attack Damage</li>
+                        <li>10% Lifesteal</li>
                     </ul>
                 </div>
                 <div class="item-desc">
-                    <strong>Lightning Bolt</strong>
-                    <p>Shocks the target enemy champion with a bolt that deals <strong>175–253</strong> magic damage (scales by level) + <strong>30% bonus AD</strong> + <strong>30% AP</strong>, and slows the target by <strong>40% for 2s</strong>. (20s cooldown, centered range 700.)</p>
+                    <strong>Spell Vamp</strong>
+                    <ul>
+                        <li>Gain 10% Spell Vamp</li>
+                    </ul>
+                    <strong>ACTIVE (60s)</strong>
+                    <ul>
+                        <li>Shocks the target enemy champion, dealing (175 - 253(based on level) + 30% Ability Power) magic damage and slowing them by 25% for 1.5s.</li>
+                    </ul>
                 </div>
             </div>
         </article>
@@ -400,79 +431,138 @@
             <div class="item-body">
                 <h3 class="item-title">Stormrazor</h3>
                 <div class="item-stats">
+                    <strong>GOLD</strong>
+                    <ul>
+                        <li>3200</li>
+                    </ul>
                     <strong>Stats</strong>
                     <ul>
-                        <li>+45 Attack Damage</li>
-                        <li>+25% Attack Speed</li>
-                        <li>+25% Critical Strike Chance</li>
+                        <li>50 Attack Damage</li>
+                        <li>20% Attack Speed</li>
+                        <li>25% Critical Strike Chance</li>
                     </ul>
                 </div>
                 <div class="item-desc">
-                    <strong>Unique — Energized</strong>
-                    <p>Moving and basic attacking generates Energize stacks, up to 100.</p>
-                    <strong>Unique — Bolt</strong>
-                    <p>When fully Energized, your next basic attack deals <strong>100 bonus magic damage on-hit</strong> and grants <strong>+45% movement speed for 1.5s</strong>.</p>
+                    <strong>Energized</strong>
+                    <ul>
+                        <li>Moving and attacking generates a <strong>Energized Attack</strong></li>
+                    </ul>
+                    <strong>Bolt</strong>
+                    <ul>
+                        <li>When fully <strong>Energized</strong>, your next basic attack deals <strong>100 bonus magic damage on-hit</strong> and grants <strong>+45% movement speed for 1.5s</strong>.</li>
+                    </ul>
                 </div>
             </div>
         </article>
         <!-- New items from Items.txt (added) -->
-        <article class="item-card" data-item-id="manabells">
+        <article class="item-card" data-item-id="Whispering-circlet">
             <div class="item-media">
-                <img class="item-img" src="ikons/NEWitems/Item_TearforEnchantersUPGRADED.jpg" alt="Savior's Manabell / Superbell">
+                <img class="item-img" src="ikons/NEWitems/WhisperingCirclet.png" alt="Whispering Circlet">
             </div>
             <div class="item-body">
-                <h3 class="item-title">Savior's Manabell / Superbell</h3>
+                <h3 class="item-title">Whispering Circlet</h3>
                 <div class="item-stats">
+                    <strong>GOLD</strong>
+                    <ul>
+                        <li>2250</li>
+                    </ul>
                     <strong>Stats</strong>
                     <ul>
-                        <li>250 Health</li>
-                        <li>-8% Heal & Shield Power</li>
-                        <li>-1,000 Mana</li>
-                        <li>-100% Base Mana Regen</li>
+                        <li>200 Health</li>
+                        <li>8% Heal & Shield Power</li>
+                        <li>75% Base Mana Regen</li>
+                        <li>300 Mana</li>
                     </ul>
                 </div>
                 <div class="item-desc">
-                    <strong>Holy</strong>
-                    <p>Gain 0 (Mana) Heal and Shield Power.</p>
+                    <strong>Harmony</strong>
+                    <ul>
+                        <li>Gain <strong>(0.5% bonus mana)</strong> Heal and Shield Power.</li>
+                    </ul>
+                    <strong>Manaflow(8s, max 5 charges)</strong>
+                    <ul>
+                        <li>Landing Abilities grants 4 max Mana(Doubled vs Champions).</li>
+                        <li>Transforms into <strong>Diadem of Songs</strong> at 360 Max Mana</li>
+                    </ul>
+            </div>
+        </article>
+
+        <article class="item-card" data-item-id="Diadem-of-songs">
+            <div class="item-media">
+                <img class="item-img" src="ikons/NEWitems/Item_TearforEnchantersUPGRADED.jpg" alt="Diadem of Songs">
+            </div>
+            <div class="item-body">
+                <h3 class="item-title">Diadem of Songs</h3>
+                <div class="item-stats">
+                    <strong>GOLD</strong>
+                    <ul>
+                        <li>Transforms from Whispering Circlet</li>
+                    </ul>
+                    <strong>Stats</strong>
+                    <ul>
+                        <li>200 Health</li>
+                        <li>8% Heal & Shield Power</li>
+                        <li>100% Base Mana Regen</li>
+                        <li>1000 Mana</li>
+                    </ul>
                 </div>
                 <div class="item-desc">
-                    <strong>Passive — Ye Old Moonstone</strong>
-                    <p>While in combat with champions, each second heal the lowest nearby ally for <strong>1% of your maximum Mana</strong>.</p>
-                </div>
+                    <strong>Harmony</strong>
+                    <ul>
+                        <li>Gain <strong>(0.5% bonus mana)</strong> Heal and Shield Power.</li>
+                    </ul>
+                    <strong>Consonance</strong>
+                    <ul>
+                        <li>While you or any ally you've healed or shielded in the last 3 seconds is in combat with champions, each second, heal the lowest nearby ally for 1% of your maximum Mana.</li>
+                    </ul>
             </div>
         </article>
 
         <!-- Ye Old Moonstone merged into Savior's Manabell / Superbell as a passive -->
 
-        <article class="item-card" data-item-id="emblem-allin">
+        <article class="item-card" data-item-id="fiendhunter-bolts">
             <div class="item-media">
-                <img class="item-img" src="ikons/NEWitems/Item_UltAllin.jpg" alt="Emblem of All-Inning">
+                <img class="item-img" src="ikons/NEWitems/Item_UltAllin.jpg" alt="Fiendhunter Bolts">
             </div>
             <div class="item-body">
-                <h3 class="item-title">Emblem of All-Inning</h3>
+                <h3 class="item-title">Fiendhunter Bolts</h3>
                 <div class="item-stats">
+                    <strong>GOLD</strong>
                     <ul>
-                        <li>-40% Attack Speed</li>
-                        <li>-25% Critical Strike Chance</li>
-                        <li>-4% Move Speed</li>
+                        <li>2650</li>
+                    </ul>
+                    <strong>Stats</strong>
+                    <ul>
+                        <li>40% Attack Speed</li>
+                        <li>25% Critical Strike Chance</li>
+                        <li>4% Move Speed</li>
                     </ul>
                 </div>
                 <div class="item-desc">
-                    <strong>Functionality</strong>
-                    <p>Gain 15 Ultimate Ability Haste.</p>
+                    <strong>Night Vigil</strong>
+                    <ul>
+                        <li>Gain 30 Ultimate Ability Haste.</li>
+                    </ul>
                     <strong>Divine All-In (60s)</strong>
-                    <p>After casting your Ultimate, your next 3 basic attacks gain 50% Attack Speed and critically strike for 75% of normal crit damage for 8s. If an attack would already crit, instead it deals +10% bonus true damage.</p>
+                    <ul>
+                        <li>After casting Your Ultimate, your next 3 basic attacks gain 50% Attack Speed and Critically Strike for 75% of your normal Critical Strike damage for 8 seconds. If an attack would already Critically Strike, instead it deals +10% bonus true damage.</li>
+                    </ul>
                 </div>
             </div>
         </article>
 
-        <article class="item-card" data-item-id="mantle">
+        <article class="item-card" data-item-id="protoplasm-harness">
             <div class="item-media">
-                <img class="item-img" src="ikons/NEWitems/Items_TankLifeline.jpg" alt="Mantle of the Twelfth Hour">
+                <img class="item-img" src="ikons/NEWitems/Items_TankLifeline.jpg" alt="Protoplasm Harness">
             </div>
             <div class="item-body">
-                <h3 class="item-title">Mantle of the Twelfth Hour</h3>
+                <h3 class="item-title">Protoplasm Harness</h3>
                 <div class="item-stats">
+                    <Strong>GOLD</Strong>
+                    <ul>
+                        <li>2500</li>
+                    </ul>
+                    <strong>Stats</strong>
                     <ul>
                         <li>600 Health</li>
                         <li>15 Ability Haste</li>
@@ -480,39 +570,53 @@
                 </div>
                 <div class="item-desc">
                     <strong>Lifeline (90s)</strong>
-                    <p>When damage would reduce you below 30% HP, regenerate 480 Health over 5 seconds. While regenerating, gain +15% Size, +10% Move Speed and +25% Tenacity.</p>
+                    <ul>
+                        <li>Taking damage that would reduce your Health below 30%, causes you to gain 200 maximum Health for 5 seconds, then heal (200 - 400(based on level) + 250% Bonus Armor + 250% Bonus Magic Resist) Health over the duration. While regenerating Health, you gain 15% increased Size, 10% Move Speed, and 25% Tenacity.</li>
+                    </ul>
                 </div>
             </div>
         </article>
 
-        <article class="item-card" data-item-id="buff-engine">
+        <article class="item-card" data-item-id="bandlepipes">
             <div class="item-media">
-                <img class="item-img" src="ikons/NEWitems/Item_Tank_ASAura.jpg" alt="Buff Engine">
+                <img class="item-img" src="ikons/NEWitems/Item_Tank_ASAura.jpg" alt="Bandlepipes">
             </div>
             <div class="item-body">
-                <h3 class="item-title">Buff Engine</h3>
+                <h3 class="item-title">Bandlepipes</h3>
                 <div class="item-stats">
+                    <strong>GOLD</strong>
+                    <ul>
+                        <li>2000</li>
+                    </ul>
+                    <strong>Stats</strong>
                     <ul>
                         <li>200 Health</li>
-                        <li>10 Ability Haste</li>
-                        <li>25 Armor</li>
-                        <li>25 Magic Resist</li>
+                        <li>15 Ability Haste</li>
+                        <li>20 Armor</li>
+                        <li>20 Magic Resist</li>
                     </ul>
                 </div>
                 <div class="item-desc">
-                    <strong>Buff Time</strong>
-                    <p>Slowing or immobilizing an enemy grants a Buff Aura for 8s. While you have the aura you gain +20 Move Speed; nearby allies gain +30% Attack Speed.</p>
+                    <strong>Fanfare</strong>
+                    <ul>
+                        <li>Slowing or immobilizing an enemy grants a Fanfare for 4s(Ranged) or 8s(Melee). Fanfare grants you 20 Move Speed. While you have Fanfare, nearby allies, including yourself gain 20% Attack Speed(Ranged) or 30% Attack Speed(Melee).</li>
+                    </ul>
                 </div>
             </div>
         </article>
 
-        <article class="item-card" data-item-id="mananomicon">
+        <article class="item-card" data-item-id="actualizer">
             <div class="item-media">
-                <img class="item-img" src="ikons/NEWitems/Item_ManaStacking_Active.jpg" alt="Mananomicon">
+                <img class="item-img" src="ikons/NEWitems/Item_ManaStacking_Active.jpg" alt="Actualizer">
             </div>
             <div class="item-body">
-                <h3 class="item-title">Mananomicon</h3>
+                <h3 class="item-title">Actualizer</h3>
                 <div class="item-stats">
+                    <strong>GOLD</strong>
+                    <ul>
+                        <li>3100</li>
+                    </ul>
+                    <strong>Stats</strong>
                     <ul>
                         <li>90 Ability Power</li>
                         <li>300 Mana</li>
@@ -520,19 +624,26 @@
                     </ul>
                 </div>
                 <div class="item-desc">
-                    <strong>Mana Ascension (60s)</strong>
-                    <p>For 8s your Mana Ascends — spells cost 100% more Mana, you gain +10% Ability damage/Shielding/Healing and cooldown progress is 25% faster.</p>
+                    <strong>(ACTIVE) Mana Made Real (60s)</strong>
+                    <ul>
+                        <li>For 8 seconds, your mana is Empowered. While Empowered, your spells cost 100% more Mana, you gain (15% + 0.005% bonus Mana) increased Ability damage, Shielding, and Healing, and your basic ability cooldowns progress 30% faster.</li>
+                    </ul>
                 </div>
             </div>
         </article>
 
-        <article class="item-card" data-item-id="assassin-unnamed">
+        <article class="item-card" data-item-id="bastionbreaker">
             <div class="item-media">
-                <img class="item-img" src="ikons/NEWitems/Item_ADAssassinGemEnder.jpg" alt="Assassin Item (unnamed)">
+                <img class="item-img" src="ikons/NEWitems/Item_ADAssassinGemEnder.jpg" alt="Bastionbreaker">
             </div>
             <div class="item-body">
-                <h3 class="item-title">Assassin Item (unnamed)</h3>
+                <h3 class="item-title">Bastionbreaker</h3>
                 <div class="item-stats">
+                    <strong>GOLD</strong>
+                    <ul>
+                        <li>3200</li>
+                    </ul>
+                    <strong>Stats</strong>
                     <ul>
                         <li>55 Attack Damage</li>
                         <li>22 Lethality</li>
@@ -540,10 +651,42 @@
                     </ul>
                 </div>
                 <div class="item-desc">
-                    <strong>Deal Damage (20s)</strong>
-                    <p>Dealing Ability damage to a Champion or Epic Monster deals an additional 15 true damage.</p>
-                    <strong>Please End the Game</strong>
-                    <p>Taking down a champion within 3s of damaging them grants Game Health for 90s. While you have Game Health, your next attack against an Epic Monster or Turret deals an additional 240 true damage over 3s.</p>
+                    <strong>Shaped Charge (20s)</strong>
+                    <ul>
+                        <li>Dealing Ability damage to a Champion or Epic Monster deals an additional (30 + 150% Lethality) true damage.</li>
+                    </ul>
+                    <strong>Sabotage</strong>
+                    <ul>
+                        <li>Taking down a champion within 3s of damaging them grants Sabotage for 90 seconds. While you have Sabotage, your next Attack against an Epic Monster or Turret deals an additional (300 + 2500% Lethality) true damage over 3 seconds.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+                <article class="item-card" data-item-id="echoes-of-helia">
+            <div class="item-media">
+                <img class="item-img" src="ikons/NEWitems/Echoes_of_Helia_item.png" alt="Echoes of Helia">
+            </div>
+            <div class="item-body">
+                <h3 class="item-title">Echoes of Helia</h3>
+                <div class="item-stats">
+                    <strong>GOLD</strong>
+                    <ul>
+                        <li>2200</li>
+                    </ul>
+                    <strong>Stats</strong>
+                    <ul>
+                        <li>35 Ability Power</li>
+                        <li>200 Health</li>
+                        <li>20 Ability Haste</li>
+                        <li>125% Base Mana Regeneration</li>
+                    </ul>
+                </div>
+                <div class="item-desc">
+                    <strong>Soul Siphon</strong>
+                    <ul>
+                        <li>Gain 35% of pre-mitigation damage dealt to champions as Soul Charges, up to 80 - 250(based on level) Charges, Healing or Shielding an ally consumes all Soul Charges to restore 100% of that value as Health.</li>
+                    </ul>
                 </div>
             </div>
         </article>
