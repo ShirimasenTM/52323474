@@ -147,6 +147,18 @@
             .theme-toggle { padding:6px 10px; font-size:0.95rem; border-radius:8px; }
             .theme-toggle[aria-pressed="true"] { box-shadow: inset 0 -2px 0 rgba(0,0,0,0.08); }
         .clickable-img { cursor: zoom-in; }
+        /* Inline stat/icon helper (use <img class="inline-icon"> inside text)
+           Use height + width:auto so icons keep their aspect ratio and
+           don't get cropped. `object-fit:contain` helps some browsers
+           scale the image correctly. */
+        .inline-icon {
+            height: 18px;
+            width: auto;
+            vertical-align: middle;
+            margin: 0 6px;
+            display: inline-block;
+            object-fit: contain;
+        }
     </style>
 </head>
 <body>
@@ -308,23 +320,23 @@
             <div class="item-body">
                 <h3 class="item-title">Dusk & Dawn</h3>
                 <div class="item-stats">
-                    <strong>GOLD</strong>
+                    <strong>Price</strong>
                     <ul>
-                        <li>3100</li>
+                        <li>3100<img class="inline-icon" src="ikons/stat_icons/Gold_icon.webp" alt="" aria-hidden="true"></li>
                     </ul>
                     <strong>Stats</strong>
                     <ul>
-                        <li>300 Health</li>
-                        <li>70 Ability Power</li>
-                        <li>20 Ability Haste</li>
-                        <li>25% Attack Speed</li>
+                        <li><img class="inline-icon" src="ikons/stat_icons/Health_colored_icon.webp" alt="" aria-hidden="true"> 300 Health</li>
+                        <li><img class="inline-icon" src="ikons/stat_icons/Ability_power_colored_icon.webp" alt="" aria-hidden="true"> 70 Ability Power</li>
+                        <li><img class="inline-icon" src="ikons/stat_icons/Ability_haste_colored_icon.webp" alt="" aria-hidden="true"> 20 Ability Haste</li>
+                        <li><img class="inline-icon" src="ikons/stat_icons/Attack_Speed_colored_icon.webp" alt="" aria-hidden="true"> 25% Attack Speed</li>
                     </ul>
                 </div>
 
                 <div class="item-desc">
-                    <strong>Spellblade (1.5 seconds)</strong>
+                    <strong>Spellblade <img class="inline-icon" src="ikons/stat_icons/Cooldown_icon.webp" alt="" aria-hidden="true">(1.5s)</strong>
                     <ul>
-                        <li>After using an ability, your next attack deals (100 base AD + 10% AP) bonus magic damage . Applies On-Hit effects an additional time.</li>
+                        <li>After using an ability, your next attack deals (<span style="color: #d97706;">100 base</span><img class="inline-icon" src="ikons/stat_icons/Attack_Damage_colored_icon.webp" alt="" aria-hidden="true"> + <span style="color: #a855f7;">10%</span> <img class="inline-icon" src="ikons/stat_icons/Ability_power_colored_icon.webp" alt="" aria-hidden="true">) bonus magic damage . Applies <img class="inline-icon" src="ikons/stat_icons/On_hit.png" alt="" aria-hidden="true">On-hit effects an additional time.</li>
                     </ul>
                 </div>
 
@@ -333,14 +345,14 @@
 
         <article class="item-card" data-item-id="eternal-hunger">
             <div class="item-media">
-                <img class="item-img" src="ikons/NEWitems/Item_BloodlettersCurse.jpg" alt="Eternal Hunger">
+                <img class="item-img" src="ikons/NEWitems/EternalHunger.png" alt="Eternal Hunger">
             </div>
             <div class="item-body">
                 <h3 class="item-title">Eternal Hunger</h3>
                 <div class="item-stats">
-                    <strong>GOLD</strong>
+                    <strong>Price</strong>
                     <ul>
-                        <li>3000</li>
+                        <li>3000<img class="inline-icon" src="ikons/stat_icons/Gold_icon.webp" alt="" aria-hidden="true"></li>
                     </ul>
                     <strong>Stats</strong>
                     <ul>
@@ -369,9 +381,9 @@
             <div class="item-body">
                 <h3 class="item-title">Hexoptics C44</h3>
                 <div class="item-stats">
-                    <strong>GOLD</strong>
+                    <strong>Price</strong>
                     <ul>
-                        <li>2800</li>
+                        <li>2800<img class="inline-icon" src="ikons/stat_icons/Gold_icon.webp" alt="" aria-hidden="true"></li>
                     </ul>
                     <strong>Stats</strong>
                     <ul>
@@ -399,9 +411,9 @@
             <div class="item-body">
                 <h3 class="item-title">Hextech Gunblade</h3>
                 <div class="item-stats">
-                    <strong>GOLD</strong>
+                    <strong>Price</strong>
                     <ul>
-                        <li>3000</li>
+                        <li>3000<img class="inline-icon" src="ikons/stat_icons/Gold_icon.webp" alt="" aria-hidden="true"></li>
                     </ul>
                     <strong>Stats</strong>
                     <ul>
@@ -431,9 +443,9 @@
             <div class="item-body">
                 <h3 class="item-title">Stormrazor</h3>
                 <div class="item-stats">
-                    <strong>GOLD</strong>
+                    <strong>Price</strong>
                     <ul>
-                        <li>3200</li>
+                        <li>3200<img class="inline-icon" src="ikons/stat_icons/Gold_icon.webp" alt="" aria-hidden="true"></li>
                     </ul>
                     <strong>Stats</strong>
                     <ul>
@@ -462,9 +474,9 @@
             <div class="item-body">
                 <h3 class="item-title">Whispering Circlet</h3>
                 <div class="item-stats">
-                    <strong>GOLD</strong>
+                    <strong>Price</strong>
                     <ul>
-                        <li>2250</li>
+                        <li>2250<img class="inline-icon" src="ikons/stat_icons/Gold_icon.webp" alt="" aria-hidden="true"></li>
                     </ul>
                     <strong>Stats</strong>
                     <ul>
@@ -494,7 +506,7 @@
             <div class="item-body">
                 <h3 class="item-title">Diadem of Songs</h3>
                 <div class="item-stats">
-                    <strong>GOLD</strong>
+                    <strong>Price</strong>
                     <ul>
                         <li>Transforms from Whispering Circlet</li>
                     </ul>
@@ -527,9 +539,9 @@
             <div class="item-body">
                 <h3 class="item-title">Fiendhunter Bolts</h3>
                 <div class="item-stats">
-                    <strong>GOLD</strong>
+                    <strong>Price</strong>
                     <ul>
-                        <li>2650</li>
+                        <li>2650<img class="inline-icon" src="ikons/stat_icons/Gold_icon.webp" alt="" aria-hidden="true"></li>
                     </ul>
                     <strong>Stats</strong>
                     <ul>
@@ -558,9 +570,9 @@
             <div class="item-body">
                 <h3 class="item-title">Protoplasm Harness</h3>
                 <div class="item-stats">
-                    <Strong>GOLD</Strong>
+                    <strong>Price</strong>
                     <ul>
-                        <li>2500</li>
+                        <li>2500<img class="inline-icon" src="ikons/stat_icons/Gold_icon.webp" alt="" aria-hidden="true"></li>
                     </ul>
                     <strong>Stats</strong>
                     <ul>
@@ -584,9 +596,9 @@
             <div class="item-body">
                 <h3 class="item-title">Bandlepipes</h3>
                 <div class="item-stats">
-                    <strong>GOLD</strong>
+                    <strong>Price</strong>
                     <ul>
-                        <li>2000</li>
+                        <li>2000<img class="inline-icon" src="ikons/stat_icons/Gold_icon.webp" alt="" aria-hidden="true"></li>
                     </ul>
                     <strong>Stats</strong>
                     <ul>
@@ -612,9 +624,9 @@
             <div class="item-body">
                 <h3 class="item-title">Actualizer</h3>
                 <div class="item-stats">
-                    <strong>GOLD</strong>
+                    <strong>Price</strong>
                     <ul>
-                        <li>3100</li>
+                        <li>3100<img class="inline-icon" src="ikons/stat_icons/Gold_icon.webp" alt="" aria-hidden="true"></li>
                     </ul>
                     <strong>Stats</strong>
                     <ul>
@@ -639,21 +651,21 @@
             <div class="item-body">
                 <h3 class="item-title">Bastionbreaker</h3>
                 <div class="item-stats">
-                    <strong>GOLD</strong>
+                    <strong>Price</strong>
                     <ul>
-                        <li>3200</li>
+                        <li>3200<img class="inline-icon" src="ikons/stat_icons/Gold_icon.webp" alt="" aria-hidden="true"></li>
                     </ul>
                     <strong>Stats</strong>
                     <ul>
-                        <li>55 Attack Damage</li>
-                        <li>22 Lethality</li>
-                        <li>15 Ability Haste</li>
+                        <li><img class="inline-icon" src="ikons/stat_icons/Attack_damage_colored_icon.webp" alt="" aria-hidden="true">55 Attack Damage</li>
+                        <li><img class="inline-icon" src="ikons/stat_icons/Armor_penetration_colored_icon.webp" alt="" aria-hidden="true">22 Lethality</li>
+                        <li><img class="inline-icon" src="ikons/stat_icons/Ability_haste_colored_icon.webp" alt="" aria-hidden="true">15 Ability Haste</li>
                     </ul>
                 </div>
                 <div class="item-desc">
-                    <strong>Shaped Charge (20s)</strong>
+                    <strong>Shaped Charge <img class="inline-icon" src="ikons/stat_icons/Cooldown_icon.webp" alt="" aria-hidden="true">(20s)</strong>
                     <ul>
-                        <li>Dealing Ability damage to a Champion or Epic Monster deals an additional (30 + 150% Lethality) true damage.</li>
+                        <li>Dealing Ability damage to a Champion or Epic Monster deals an additional (30 + 150% <img class="inline-icon" src="ikons/stat_icons/Armor_penetration_colored_icon.webp" alt="" aria-hidden="true">) true damage.</li>
                     </ul>
                     <strong>Sabotage</strong>
                     <ul>
@@ -668,11 +680,11 @@
                 <img class="item-img" src="ikons/NEWitems/Echoes_of_Helia_item.png" alt="Echoes of Helia">
             </div>
             <div class="item-body">
-                <h3 class="item-title">Echoes of Helia</h3>
+                <h3 class="item-title">Echoes of Helia ( REWORK )</h3>
                 <div class="item-stats">
-                    <strong>GOLD</strong>
+                    <strong>Price</strong>
                     <ul>
-                        <li>2200</li>
+                        <li>2200<img class="inline-icon" src="ikons/stat_icons/Gold_icon.webp" alt="" aria-hidden="true"></li>
                     </ul>
                     <strong>Stats</strong>
                     <ul>
